@@ -24,12 +24,14 @@ namespace Users.Infrastructure
             //        Code = "EmailDomainError",
             //        Description = "Only example.com email addresses are allowed" }));
             //}
-            if (!user.Email.ToLower().EndsWith("@example.com"))
-            {
-                errors.Add(new IdentityError {
-                    Code = "EmailDomainError",
-                    Description = "Only example.com email addresses are allowed" });
-            }
+
+
+            //if (!user.Email.ToLower().EndsWith("@example.com"))
+            //{
+            //    errors.Add(new IdentityError {
+            //        Code = "EmailDomainError",
+            //        Description = "Only example.com email addresses are allowed" });
+            //}
             return errors.Count == 0 ? IdentityResult.Success : IdentityResult.Failed(errors.ToArray());
         }
     }
